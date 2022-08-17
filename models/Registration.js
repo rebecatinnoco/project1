@@ -19,15 +19,5 @@ const registrationSchema = new mongoose.Schema({
     trim: true,
   },
 });
-// const Schema = mongoose.Schema;
-// const UserDetail = new Schema({
-//     username: String,
-//     password: String
-// });
-
-// UserDetail.plugin(passportLocalMongoose);
-// const UserDetails = mongoose.model('userInfo', UserDetail, 'userInfo');
-
-
 
 module.exports = mongoose.model('Registration', registrationSchema);

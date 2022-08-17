@@ -25,11 +25,4 @@ app.use(bodyParser.json());
 app.use(expressSession);
 app.use('/', routes);
 
-
-// PASSPORT SETUP
-const passport = require('passport');
-
-app.use(passport.initialize());
-app.use(passport.session());
-
 module.exports = app;
