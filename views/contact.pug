@@ -1,0 +1,115 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title The Modern Pet
+  link(rel='icon' href='images/icon.png' type='image/icon type')
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.11/vue.js')
+  // Project Local CSS
+  link(rel='stylesheet' href='/css/style.css')
+#container
+  header
+    // <nav class="main-menu navbar navbar-expand-sm navbar-dark">
+    .main-header
+      .logo
+        img(src='images/logo-small.png' alt='Modern Pet')
+      nav.main-menu.navbar.navbar-expand-sm.navbar-dark
+        #navbarContent
+          ul.navbar-nav
+            li.nav-item
+              a.nav-link(href='/') Home
+            li.nav-item
+              a.nav-link(href='#aboutDiv') About
+            li.nav-item
+              a.nav-link(href='contact') Contact Us
+            a.nav-item.btn.btn-info.buttonR(href='register') Register/Sign In
+#bottomHeader
+  a(href='#')
+    p CLICK HERE FOR 25% off!
+// Contact Form
+.contact
+  .contactinfo
+    form(action='/contact' method='post')
+      fieldset
+        legend Contact Form
+        .textbox
+          label Name:
+          input(type='text' name='name' placeholder='John Doe')
+          br
+          label Email:
+          input(type='email' name='email' placeholder='johndoe@gmail.com')
+          br
+          label Phone:
+          input(type='text' name='phone' placeholder='xxx-xxx-xxxx')
+        .radios
+          label
+            | How should we contact you?
+            input(type='radio' name='contact' value='email' checked='')
+            | Email 
+            input(type='radio' name='contact' value='phone')
+            | Phone
+        .commentbox
+          label How did you hear about us:
+          br
+          textarea
+        #butt
+          a.btn.btn-info(href='contact_thank.html') Submit
+// FOOTER
+footer
+  .logoFooter
+    img(src='images/logo-small.png' alt='Modern Pet')
+  .footerR
+    .row
+      .col
+        h5 MAIN MENU
+        ul.list-unstyled.f_list
+          li
+            a(href='#') Home
+          li
+            a(href='#aboutDiv') About
+          li
+            a(href='/contact') Contact Us
+      .col
+        h5 LOCATION
+        ul.list-unstyled.f_list
+          li
+            a(href='https://goo.gl/maps/hqacjYqXwNDhgL8E7' target='_blank') South Orlando
+          li
+            a(href='https://goo.gl/maps/18rCxBk2LYeWNrL49' target='_blank') Alafaya
+          li
+            a(href='https://goo.gl/maps/vjVeq4CyDi4SPZEs9' target='_blank') Downtown
+      .col
+        h5 FOLLOW US!
+        .row.text-center.socialbottom
+          .col-12.col-md-3
+            a.fa.fa-instagram(href='https://www.instagram.com/explore/tags/puppies/?hl=en' target='_blank')
+          br
+          br
+          .col-12.col-md-3
+            a.fa.fa-twitter(href='https://twitter.com/search?q=puppies&src=typed_query' target='_blank')
+          br
+          br
+          .col-12.col-md-3
+            a.fa.fa-facebook(href='https://m.facebook.com/search/videos/?q=%23puppies&source=filter&isTrending=0' target='_blank')
+          br
+          br
+  #copy.copy.col-sm-4
+    // <div id="copy" class="col-12 col-sm-2 mt-4 justify-content-end text-sm-right mr-4">
+    div &copy; Copyright 2020 : modernpet.com
+    div
+      p
+        | Website developed and designed by 
+        a(href='http://rebecatino.co' target='_blank') Rebeca Tinoco
+// External Files/Links
+// Font Awesome
+link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+// Bootstrap CSS
+link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+// JQuery
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+// Popper
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+// End of External Files/Links
+script(src='vue.js')
