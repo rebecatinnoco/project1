@@ -15,7 +15,7 @@ head
     // <nav class="main-menu navbar navbar-expand-sm navbar-dark">
     .main-header
       .logo
-        img(src='public/images/logo-small-2.png' alt='Modern Pet')
+      img(src='images/logo-small-2.png' alt='Modern Pet')
       nav.main-menu.navbar.navbar-expand-sm.navbar-dark
         #navbarContent
           ul.navbar-nav
@@ -31,9 +31,57 @@ head
     p CLICK HERE FOR 25% off!
 // PRODUCTS
 .main-wrapper
-  h1 Products
+ h1 Products
   #vue
-    pagecomp(v-for='item in catalog' v-bind:item='item')
+    pagecomp
+      #images
+        img(src='https://cdn.shopify.com/s/files/1/0072/6802/products/reflect-collar-yellow01_700x.jpg?v=1571438512' v-bind:alt='petstar')
+        h5.leg  Custom Reflective Dog Collar - Medium
+        p.desc
+          | Reflective Collar with personalized buckle
+          br
+          | $ 21.10
+        button.btn.btn-light.buttonP Add to Cart
+      #images
+        img(src='https://cdn.shopify.com/s/files/1/0645/1173/8103/products/712iUesHShL_480x.jpg?v=1653077357' v-bind:alt='wickedbone')
+        h5.leg  Smart Automatic Bone Toy For Dogs
+        p.desc
+          | Automatic &amp; Intelligent
+          br
+          | $ 120.90
+        button.btn.btn-light.buttonP Add to Cart
+      #images
+        img(src='https://cdn.shopify.com/s/files/1/0645/1173/8103/products/712XScWOtsL_480x.jpg?v=1653077309' v-bind:alt='puppy-usa inc')
+        h5.leg  Plush Donut Calming Dog Bed | Beige
+        p.desc
+          | A Plush donut dog bed will create a calm
+          br
+          | $ 15.10
+        button.btn.btn-light.buttonP Add to Cart
+      #images
+        img(src='https://cdn.shopify.com/s/files/1/0645/1173/8103/products/71JUqjCZzyL_480x.jpg?v=1653544031' v-bind:alt='chuckit')
+        h5.leg  Pet Indoor Teepe Tent | Navy Blue
+        p.desc
+          | A safe and comfortable resting place and home decoration
+          br
+          | $ 65.69
+        button.btn.btn-light.buttonP Add to Cart
+      #images
+        img(src='https://cdn.shopify.com/s/files/1/0645/1173/8103/products/81rRDWjin8L_480x.jpg?v=1653543995' v-bind:alt='hokinet')
+        h5.leg  Hanging Bungee Tug Toy
+        p.desc
+          | Interesting Bungee Design: Dogs love tug of war games
+          br
+          | $ 21.10
+        button.btn.btn-light.buttonP Add to Cart
+      #images
+        img(src='https://cdn.shopify.com/s/files/1/0645/1173/8103/products/71QyGn1TVcL_480x.jpg?v=1653543999' v-bind:alt='hokinety')
+        h5.leg  Interactive Fetch Toy | Orange
+        p.desc
+          | Made with rubber and foam and durable canvas fabric
+          br
+          | $ 45.15
+        button.btn.btn-light.buttonP Add to Cart
 // ABOUT US
 #aboutDiv
   #contact-b
@@ -43,7 +91,7 @@ head
 // FOOTER
 footer
   .logoFooter
-    img(src='images/logo-small.png' alt='Modern Pet')
+    img(src='images/logo-small-2.png' alt='Modern Pet')
   .footerR
     .row
       .col
@@ -96,4 +144,4 @@ script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
 // Popper
 script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
 // End of External Files/Links
-script(src='vue.js')
+

@@ -1,6 +1,5 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
-const passportLocalMongoose = require('passport-local-mongoose');
 
 mongoose.connect(process.env.DATABASE, {
   useNewUrlParser: true,

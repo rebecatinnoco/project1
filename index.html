@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Modern Pet</title>
-    <link rel="icon" href="images/icon.png" type="image/icon type">
+    <link rel="icon" href="/public/images/icon.png" type="image/icon type">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.11/vue.js"></script>
@@ -18,7 +18,7 @@
         <!-- <nav class="main-menu navbar navbar-expand-sm navbar-dark"> -->
         <div class="main-header">
         <div class="logo"> 
-            <img src="images/logo-small.png" alt="Modern Pet">
+            <img src="/public/images/logo-small-2.png" alt="Modern Pet">
         </div>
         
         <nav class="main-menu navbar navbar-expand-sm navbar-dark">
@@ -48,9 +48,43 @@
 <div class="main-wrapper">
     <h1>Products</h1>
     <div id="vue">
-        <pagecomp 
-            v-for="item in catalog"
-            v-bind:item="item">
+        <pagecomp>
+        <div id="images">          
+            <img src="https://cdn.shopify.com/s/files/1/0072/6802/products/reflect-collar-yellow01_700x.jpg?v=1571438512" v-bind:alt='petstar'>
+            <h5 class='leg'> Custom Reflective Dog Collar - Medium</h5>
+            <p class='desc'>Reflective Collar with personalized buckle<br>$ 21.10</p>
+            <button class="btn btn-light buttonP">Add to Cart</button>
+     </div>
+     <div id="images">          
+        <img src="https://cdn.shopify.com/s/files/1/0645/1173/8103/products/712iUesHShL_480x.jpg?v=1653077357" v-bind:alt='wickedbone'>
+        <h5 class='leg'> Smart Automatic Bone Toy For Dogs</h5>
+        <p class='desc'>Automatic & Intelligent<br>$ 120.90</p>
+        <button class="btn btn-light buttonP">Add to Cart</button>
+ </div>
+ <div id="images">          
+    <img src="https://cdn.shopify.com/s/files/1/0645/1173/8103/products/712XScWOtsL_480x.jpg?v=1653077309" v-bind:alt='puppy-usa inc'>
+    <h5 class='leg'> Plush Donut Calming Dog Bed | Beige</h5>
+    <p class='desc'>A Plush donut dog bed will create a calm<br>$ 15.10</p>
+    <button class="btn btn-light buttonP">Add to Cart</button>
+</div>
+<div id="images">          
+    <img src="https://cdn.shopify.com/s/files/1/0645/1173/8103/products/71JUqjCZzyL_480x.jpg?v=1653544031" v-bind:alt='chuckit'>
+    <h5 class='leg'> Pet Indoor Teepe Tent | Navy Blue</h5>
+    <p class='desc'>A safe and comfortable resting place and home decoration<br>$ 65.69</p>
+    <button class="btn btn-light buttonP">Add to Cart</button>
+</div>
+<div id="images">          
+    <img src="https://cdn.shopify.com/s/files/1/0645/1173/8103/products/81rRDWjin8L_480x.jpg?v=1653543995" v-bind:alt='hokinet'>
+    <h5 class='leg'> Hanging Bungee Tug Toy</h5>
+    <p class='desc'>Interesting Bungee Design: Dogs love tug of war games<br>$ 21.10</p>
+    <button class="btn btn-light buttonP">Add to Cart</button>
+</div>
+<div id="images">          
+    <img src="https://cdn.shopify.com/s/files/1/0645/1173/8103/products/71QyGn1TVcL_480x.jpg?v=1653543999" v-bind:alt='hokinety'>
+    <h5 class='leg'> Interactive Fetch Toy | Orange</h5>
+    <p class='desc'>Made with rubber and foam and durable canvas fabric<br>$ 45.15</p>
+    <button class="btn btn-light buttonP">Add to Cart</button>
+</div>
         </pagecomp>
     </div>
 </div>

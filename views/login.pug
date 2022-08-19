@@ -14,7 +14,7 @@ head
     // <nav class="main-menu navbar navbar-expand-sm navbar-dark">
     .main-header
       .logo
-        img(src='images/logo-small.png' alt='Modern Pet')
+        img(src='images/logo-small-2.png' alt='Modern Pet')
       nav.main-menu.navbar.navbar-expand-sm.navbar-dark
         #navbarContent
           ul.navbar-nav
@@ -32,36 +32,19 @@ head
 .main-wrapper
 div.container.listing-reg
   h3 Login
-  -data = data || {}
-
-    if errors
-        ul.my-errors
-        for error in errors
-            li= error.msg
-    form(action="." method="POST" class="form-registration")
-        label(for="username") Username:
-        input(
-            type="text"
-            id="username"
-            name="username"
-            class="form-control"
-            value=data.username
-        )
-
-        label(for="password") Password:
-        input(
-            type="text"
-            id="password"
-            name="password"
-            class="form-control"
-            value=data.password
-        )
-
-        input(
-            type="submit" 
-            value="Login"
-            class="btn btn-lg btn-info"
-        )
+form(action='/login' method='post')
+  .title
+    h3 Login
+  .field
+    label Username:
+    input(type='text' name='username')
+    br
+  .field
+    label Password
+    input(type='password' name='password' required='')
+  .field
+    input.submit-btn(type='submit' value='submit' required='')
+  label(id='error message')
 // ABOUT US
 #aboutDiv
   #contact-b
@@ -71,7 +54,7 @@ div.container.listing-reg
 // FOOTER
 footer
   .logoFooter
-    img(src='images/logo-small.png' alt='Modern Pet')
+    img(src='images/logo-small-2.png' alt='Modern Pet')
   .footerR
     .row
       .col
