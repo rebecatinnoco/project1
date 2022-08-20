@@ -24,16 +24,15 @@ head
               a.nav-link(href='#aboutDiv') About
             li.nav-item
               a.nav-link(href='contact') Contact Us
-            a.nav-item.btn.btn-light.buttonR(href='register') Register/Sign In
+            a.nav-item.btn.btn-info.buttonR(href='logout') Log Out
 #bottomHeader
   a(href='#')
     p CLICK HERE FOR 25% off!
 // REGISTER
 .message-box
   h1#welcome-message
-.main-wrapper
+.welcome
   h3 Welcome
-  a.nav-item.btn.btn-light.buttonR(href='Logout') Log Out
 // FOOTER
 footer
   .logoFooter
@@ -81,16 +80,7 @@ footer
         | Website developed and designed by 
         a(href='http://rebecatino.co') Rebeca Tinoco
 // External Files/Links
-script.
-  const req = new XMLHttpRequest();
-  req.onreadystatechange = function () {
-  if (req.readyState == 4 && req.status == 200) {
-  const user = JSON.parse(req.response).user;
-  document.getElementById("welcome-message").innerText = `Welcome ${user.username}!`;
-  }
-  };
-  req.open("GET", "http://localhost:3000/user", true);
-  req.send();
+
 
 // Font Awesome
 link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
@@ -101,4 +91,4 @@ script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
 // Popper
 script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
 // End of External Files/Links
-script(src='vue.js')
+

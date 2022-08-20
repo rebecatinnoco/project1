@@ -1,76 +1,76 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const passport = require('passport');
 const path = require('path');
 const auth = require('http-auth');
 const { check, validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 
 const router = express.Router();
-// const Registration = mongoose.model('Registration');
+const Registration = mongoose.model('Registration');
 const basic = auth.basic({
   file: path.join(__dirname, '../users.htpasswd'),
 });
 
-const passport = require('passport');
 
-app.use(passport.initialize());
-app.use(passport.session());
-// var LocalStrategy = require('passport-local');
-const passportLocalMongoose = require('passport-local-mongoose');
-const Schema = mongoose.Schema;
-// const registrationSchema = new Schema({
-//     username: String,
-//     password: String
-// });
-// registrationSchema.plugin(passportLocalMongoose);
-// const UserDetails = mongoose.model('registrations', registrationSchema);
-
-
-// passport.use(UserDetails.createStrategy());
-
-// passport.serializeUser(UserDetails.serializeUser());
-// passport.deserializeUser(UserDetails.deserializeUser());
-const registrationSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    trim: true,
-  },
-  email: {
-    type: String,
-    trim: true,
-  },
-  username: {
-    type: String,
-    trim: true,
-  },
-  password: {
-    type: String,
-    trim: true,
-  },
-});
-registrationSchema.plugin(passportLocalMongoose);
-const UserDetails = mongoose.model('registrations', registrationSchema);
-passport.use(UserDetails.createStrategy());
-// var strategy = new LocalStrategy(function verify(username, password, cb) {
-//   db.modernpet('registrations', [ username ], function(err, user) {
-//     if (err) { return cb(err); }
-//     if (!user) { return cb(null, false, { message: 'Incorrect username or password.' }); }
-
-//     crypto.pbkdf2(password, user.salt, 310000, 32, 'sha256', function(err, hashedPassword) {
-//       if (err) { return cb(err); }
-//       if (!crypto.timingSafeEqual(user.hashed_password, hashedPassword)) {
-//         return cb(null, false, { message: 'Incorrect username or password.' });
-//       }
-//       return cb(null, user);
-//     });
-//   });
-// });
-// passport.use(strategy);
-passport.serializeUser(UserDetails.serializeUser());
-passport.deserializeUser(UserDetails.deserializeUser());
-// module.exports = mongoose.model('Registration', registrationSchema);
 const connectEnsureLogin = require('connect-ensure-login');
+
+
+router.get('/', (req, res) => {
+  //res.send('It works!');
+  res.render('index', { title: 'Home' });
+});
+router.get('/contact', (req, res) => {
+  //res.send('It works!');
+  res.render('contact', { title: 'Contact' });
+});
+router.get('/login', (req, res) => {
+  //res.send('It works!');
+  res.render('login', { title: 'login' });
+});
+router.get('/register', (req, res) => {
+  //res.send('It works!');
+  res.render('register', { title: 'Registration form' });
+});
+router.get('/logged', (req, res) => {
+  //res.send('It works!');
+  res.render('logged', { title: 'Welcome' });
+});
+router.get('/logout', (req, res) => {
+  //res.send('It works!');
+  res.render('logout', { title: 'Welcome' });
+});
+
+router.get('/registrations', basic.check((req, res) => {
+  UserDetails.find()
+    .then((registrations) => {
+      res.render('registrations', { title: 'Listing registrations', registrations });
+    })
+    .catch(() => { 
+      res.send('Sorry! Something went wrong.'); 
+    });
+// router.get('/login', 
+//         (req, res) => res.sendFile('login',
+//         { root: __dirname })
+//     );
+// router.get('/logged',
+//         connectEnsureLogin.ensureLoggedIn(),
+//         (req, res) => res.sendFile('logged', { root: __dirname})
+//     );
+router.get('/user',
+        connectEnsureLogin.ensureLoggedIn(),
+        (req, res) => res.render({user: req.user})
+    );
+// router.get('/logout',
+//         (req, res) => {
+//             // req.logout(),
+//             // res.sendFile('logout',{ root: __dirname })
+//             res.render('logout', { title: 'Logout' , root: __dirname });
+//     });
+
+}));
+
 router.post('/login', (req,res,next) => {
   passport.authenticate('local',
   (err,user,info) => {
@@ -94,57 +94,6 @@ router.post('/login', (req,res,next) => {
   }) (req, res, next);
 });
 
-
-router.get('/', (req, res) => {
-  //res.send('It works!');
-  res.render('index', { title: 'Home' });
-});
-router.get('/contact', (req, res) => {
-  //res.send('It works!');
-  res.render('contact', { title: 'Contact' });
-});
-router.get('/login', (req, res) => {
-  //res.send('It works!');
-  res.render('login', { title: 'login' });
-});
-router.get('/register', (req, res) => {
-  //res.send('It works!');
-  res.render('register', { title: 'Registration form' });
-});
-router.get('/logged', (req, res) => {
-  //res.send('It works!');
-  res.render('logged', { title: 'Registration form' });
-});
-
-router.get('/registrations', basic.check((req, res) => {
-  UserDetails.find()
-    .then((registrations) => {
-      res.render('registrations', { title: 'Listing registrations', registrations });
-    })
-    .catch(() => { 
-      res.send('Sorry! Something went wrong.'); 
-    });
-router.get('/login', 
-        (req, res) => res.sendFile('login',
-        { root: __dirname })
-    );
-router.get('/logged',
-        connectEnsureLogin.ensureLoggedIn(),
-        (req, res) => res.sendFile('logged', { root: __dirname})
-    );
-// router.get('/user',
-//         connectEnsureLogin.ensureLoggedIn(),
-//         (req, res) => res.send({user: req.user})
-//     );
-router.get('/logout',
-        (req, res) => {
-            // req.logout(),
-            res.sendFile('logout',
-            { root: __dirname }
-            )
-    });
-}));
-
 router.post('/', 
     [
         check('name')
@@ -164,7 +113,7 @@ router.post('/',
         //console.log(req.body);
         const errors = validationResult(req);
         if (errors.isEmpty()) {
-          const registration = new UserDetails(req.body);
+          const registration = new Registration(req.body);
           //generate salt to hash password
           const salt = await bcrypt.genSalt(10);
           //set user to hashed password
@@ -184,6 +133,24 @@ router.post('/',
           }
     });
 
+      // login route
+      router.post("/login", async (req, res) => {
+        const body = req.body;
+        const registration = await Registration.findOne({ username: body.username });
+        if (registration) {
+          // check user password with hashed password stored in the database
+          const validPassword = await bcrypt.compare(body.password, registration.password);
+          if (validPassword) {
+            res.status(200).json({ message: "Valid password" });
+          } else {
+            res.status(400).json({ error: "Invalid Password" });
+          }
+        } else {
+          res.status(401).json({ error: "User does not exist" });
+        }
+      });
+
+      
 module.exports = router;
-// UserDetails.register({name: 'jr', emai: 'jra@sss.com', username:'jr'}, 226666);
+// Registration.register({username:'tin', active: false}, 'tin');
 // UserDetails.register({emai: 'jra@sss.com', username:'klk'}, {password});

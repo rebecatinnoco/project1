@@ -24,14 +24,14 @@ head
               a.nav-link(href='#aboutDiv') About
             li.nav-item
               a.nav-link(href='contact') Contact Us
-            a.nav-item.btn.btn-light.buttonR(href='register') Register/Sign In
+            a.nav-item.btn.btn-info.buttonR(href='register') Register/Sign In
 #bottomHeader
   a(href='#')
     p CLICK HERE FOR 25% off!
 // REGISTER
-.main-wrapper
+.logout
   h3 You're now logged out
-  a.nav-item.btn.btn-light.buttonR(href='Logout') Return to Home
+  a.nav-link(href='/') Return to Home Page
 // FOOTER
 footer
   .logoFooter
@@ -88,4 +88,4 @@ script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
 // Popper
 script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
 // End of External Files/Links
-script(src='vue.js')
+

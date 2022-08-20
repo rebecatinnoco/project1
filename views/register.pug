@@ -24,16 +24,18 @@ head
               a.nav-link(href='#aboutDiv') About
             li.nav-item
               a.nav-link(href='contact') Contact Us
-            a.nav-item.btn.btn-light.buttonR(href='register') Register/Sign In
+            a.nav-item.btn.btn-info.buttonR(href='register') Register/Sign In
 #bottomHeader
   a(href='#')
     p CLICK HERE FOR 25% off!
 // REGISTER
 .main-wrapper
+  .title
+    h3 Register to our website
   include form.pug
 
-  h3 OR
-  a.btn.btn-info.buttonR(href='login') Login
+.login
+  a.nav-link(href='login') Log In into your Account
 // ABOUT US
 #aboutDiv
   #contact-b
@@ -97,4 +99,4 @@ script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
 // Popper
 script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
 // End of External Files/Links
-script(src='vue.js')
+
