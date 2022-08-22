@@ -7,24 +7,32 @@ head
   link(rel='icon' href='images/icon.png' type='image/icon type')
   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.11/vue.js')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+  link(rel='stylesheet' href='style.css')
+
   // Project Local CSS
-  link(rel='stylesheet' href='/css/style.css')
+  link(rel='stylesheet' href='css/style.css')
 #container
   header
-    // <nav class="main-menu navbar navbar-expand-sm navbar-dark">
     .main-header
       .logo
         img(src='images/logo-small-2.png' alt='Modern Pet')
-      nav.main-menu.navbar.navbar-expand-sm.navbar-dark
-        #navbarContent
-          ul.navbar-nav
-            li.nav-item
-              a.nav-link(href='/') Home
-            li.nav-item
-              a.nav-link(href='#aboutDiv') About
-            li.nav-item
-              a.nav-link(href='contact') Contact Us
-            a.nav-item.btn.btn-info.buttonR(href='register') Register/Sign In
+      nav.main-menu.navbar.navbar-expand-lg.navbar-light
+        .container-fluid.navbarContent
+          button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+          #navbarNav.collapse.navbar-collapse
+            ul.navbar-nav
+              li.nav-item
+                a.nav-link(href='/') Home
+              li.nav-item
+                a.nav-link(href='#aboutDiv') About
+              li.nav-item
+                a.nav-link(href='contact') Contact Us
+              a.nav-item.btn.btn-info(href='register') Register/Sign In
+div
 #bottomHeader
   a(href='#')
     p CLICK HERE FOR 25% off!
@@ -36,33 +44,34 @@ head
         legend Contact Form
         .textbox
           label Name:
-          input(type='text' name='name' placeholder='John Doe')
+          input(type='text' name='name' placeholder='John Doe' class="form-control")
           br
           label Email:
-          input(type='email' name='email' placeholder='johndoe@gmail.com')
+          input(type='email' name='email' placeholder='johndoe@gmail.com' class="form-control")
           br
           label Phone:
-          input(type='text' name='phone' placeholder='xxx-xxx-xxxx')
+          input(type='text' name='phone' placeholder='xxx-xxx-xxxx' class="form-control")
         .radios
           label
-            | How should we contact you?
-            input(type='radio' name='contact' value='email' checked='')
-            | Email 
+            br
+            | How should we contact you?    
+            input(type='radio' name='contact' value='email' checked='' )
+            |   Email 
             input(type='radio' name='contact' value='phone')
-            | Phone
-        .commentbox
+            |   Phone
+        .commentbox.formcontrol          
           label How did you hear about us:
           br
           textarea
         #butt
-          a.btn.btn-info(href='contact_thank.html') Submit
+          a.btn.btn-info.form-control(href='/') Submit
 // FOOTER
-footer
-  .logoFooter
+footer.footer
+  .logoFooter.col.col-12.col-md-3
     img(src='images/logo-small-2.png' alt='Modern Pet')
   .footerR
     .row
-      .col
+      .col.col-12.col-md-3
         h5 MAIN MENU
         ul.list-unstyled.f_list
           li
@@ -71,7 +80,7 @@ footer
             a(href='#aboutDiv') About
           li
             a(href='/contact') Contact Us
-      .col
+      .col.col-12.col-md-3
         h5 LOCATION
         ul.list-unstyled.f_list
           li
@@ -80,7 +89,7 @@ footer
             a(href='https://goo.gl/maps/18rCxBk2LYeWNrL49' target='_blank') Alafaya
           li
             a(href='https://goo.gl/maps/vjVeq4CyDi4SPZEs9' target='_blank') Downtown
-      .col
+      .col.col-12.col-md-3
         h5 FOLLOW US!
         .row.text-center.socialbottom
           .col-12.col-md-3
@@ -95,13 +104,13 @@ footer
             a.fa.fa-facebook(href='https://m.facebook.com/search/videos/?q=%23puppies&source=filter&isTrending=0' target='_blank')
           br
           br
-  #copy.copy.col-sm-4
-    // <div id="copy" class="col-12 col-sm-2 mt-4 justify-content-end text-sm-right mr-4">
-    div &copy; Copyright 2020 : modernpet.com
-    div
-      p
-        | Website developed and designed by 
-        a(href='http://rebecatino.co' target='_blank') Rebeca Tinoco
+    .copy.col-sm-4
+      .copy &copy; Copyright 2020 : modernpet.com
+        p
+          | Website developed and designed by 
+          a(href='http://rebecatino.co' target='_blank') Rebeca Tinoco
+
+div 
 // External Files/Links
 // Font Awesome
 link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
@@ -112,4 +121,7 @@ script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
 // Popper
 script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
 // End of External Files/Links
-
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')

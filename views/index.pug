@@ -7,103 +7,123 @@ head
   link(rel='icon' href='images/icon.png' type='image/icon type')
   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.11/vue.js')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+
+
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/pwa/icon-152x152.png">
+  <meta name="theme-color" content="white"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="The Modern Pet">
+  <meta name="msapplication-TileImage" content="/pwa/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+
   // Project Local CSS
   link(rel='stylesheet' href='css/style.css')
-  script(src='vue.js')
 #container
   header
-    // <nav class="main-menu navbar navbar-expand-sm navbar-dark">
     .main-header
       .logo
-      img(src='images/logo-small-2.png' alt='Modern Pet')
-      nav.main-menu.navbar.navbar-expand-sm.navbar-dark
-        #navbarContent
-          ul.navbar-nav
-            li.nav-item
-              a.nav-link(href='/') Home
-            li.nav-item
-              a.nav-link(href='#aboutDiv') About
-            li.nav-item
-              a.nav-link(href='contact') Contact Us
-            a.nav-item.btn.btn-info.buttonR(href='register') Register/Sign In
+        img(src='images/logo-small-2.png' alt='Modern Pet')
+      nav.main-menu.navbar.navbar-expand-lg.navbar-light
+        .container-fluid.navbarContent
+          button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+          #navbarNav.collapse.navbar-collapse
+            ul.navbar-nav
+              li.nav-item
+                a.nav-link(href='/') Home
+              li.nav-item
+                a.nav-link(href='#aboutDiv') About
+              li.nav-item
+                a.nav-link(href='contact') Contact Us
+              a.nav-item.btn.btn-info(href='register') Register/Sign In
+div
 #bottomHeader
   a(href='#')
     p CLICK HERE FOR 25% off!
 // PRODUCTS
+.top
+  h1 Products
 .main-wrapper
- h1 Products
-  #vue
-    pagecomp
-      #images
-        img(src='https://cdn.shopify.com/s/files/1/0072/6802/products/reflect-collar-yellow01_700x.jpg?v=1571438512' v-bind:alt='petstar')
-        h5.leg  Custom Reflective Dog Collar - Medium
-        p.desc
-          | Reflective Collar with personalized buckle
-          br
-          | $ 21.10
-        button.btn.btn-light.buttonP Add to Cart
-      #images
-        img(src='https://cdn.shopify.com/s/files/1/0645/1173/8103/products/712iUesHShL_480x.jpg?v=1653077357' v-bind:alt='wickedbone')
-        h5.leg  Smart Automatic Bone Toy For Dogs
-        p.desc
-          | Automatic &amp; Intelligent
-          br
-          | $ 120.90
-        button.btn.btn-light.buttonP Add to Cart
-      #images
-        img(src='https://cdn.shopify.com/s/files/1/0645/1173/8103/products/712XScWOtsL_480x.jpg?v=1653077309' v-bind:alt='puppy-usa inc')
-        h5.leg  Plush Donut Calming Dog Bed | Beige
-        p.desc
-          | A Plush donut dog bed will create a calm
-          br
-          | $ 15.10
-        button.btn.btn-light.buttonP Add to Cart
-      #images
-        img(src='https://cdn.shopify.com/s/files/1/0645/1173/8103/products/71JUqjCZzyL_480x.jpg?v=1653544031' v-bind:alt='chuckit')
-        h5.leg  Pet Indoor Teepe Tent | Navy Blue
-        p.desc
-          | A safe and comfortable resting place and home decoration
-          br
-          | $ 65.69
-        button.btn.btn-light.buttonP Add to Cart
-      #images
-        img(src='https://cdn.shopify.com/s/files/1/0645/1173/8103/products/81rRDWjin8L_480x.jpg?v=1653543995' v-bind:alt='hokinet')
-        h5.leg  Hanging Bungee Tug Toy
-        p.desc
-          | Interesting Bungee Design: Dogs love tug of war games
-          br
-          | $ 21.10
-        button.btn.btn-light.buttonP Add to Cart
-      #images
-        img(src='https://cdn.shopify.com/s/files/1/0645/1173/8103/products/71QyGn1TVcL_480x.jpg?v=1653543999' v-bind:alt='hokinety')
-        h5.leg  Interactive Fetch Toy | Orange
-        p.desc
-          | Made with rubber and foam and durable canvas fabric
-          br
-          | $ 45.15
-        button.btn.btn-light.buttonP Add to Cart
+  .images
+    img(src='https://cdn.shopify.com/s/files/1/0072/6802/products/reflect-collar-yellow01_700x.jpg?v=1571438512' v-bind:alt='petstar')
+    h5.leg  Custom Reflective Dog Collar - Medium
+    p.desc
+      | Reflective Collar with personalized buckle
+      br
+      | $ 21.10
+    button.btn.btn-info.buttonP Add to Cart
+  .images
+    img(src='https://cdn.shopify.com/s/files/1/0645/1173/8103/products/712iUesHShL_480x.jpg?v=1653077357' v-bind:alt='wickedbone')
+    h5.leg  Smart Automatic Bone Toy For Dogs
+    p.desc
+      | Automatic &amp; Intelligent
+      br
+      | $ 120.90
+    button.btn.btn-info.buttonP Add to Cart
+  .images
+    img(src='https://cdn.shopify.com/s/files/1/0645/1173/8103/products/712XScWOtsL_480x.jpg?v=1653077309' v-bind:alt='puppy-usa inc')
+    h5.leg  Plush Donut Calming Dog Bed | Beige
+    p.desc
+      | A Plush donut dog bed will create a calm
+      br
+      | $ 15.10
+    button.btn.btn-info.buttonP Add to Cart
+  .images
+    img(src='https://cdn.shopify.com/s/files/1/0645/1173/8103/products/71JUqjCZzyL_480x.jpg?v=1653544031' v-bind:alt='chuckit')
+    h5.leg  Pet Indoor Teepe Tent | Navy Blue
+    p.desc
+      | A safe and comfortable resting place and home decoration
+      br
+      | $ 65.69
+    button.btn.btn-info.buttonP Add to Cart
+  .images
+    img(src='https://cdn.shopify.com/s/files/1/0645/1173/8103/products/81rRDWjin8L_480x.jpg?v=1653543995' v-bind:alt='hokinet')
+    h5.leg  Hanging Bungee Tug Toy
+    p.desc
+      | Interesting Bungee Design: Dogs love tug of war games
+      br
+      | $ 21.10
+    button.btn.btn-info.buttonP Add to Cart
+  .images
+    img(src='https://cdn.shopify.com/s/files/1/0645/1173/8103/products/71QyGn1TVcL_480x.jpg?v=1653543999' v-bind:alt='hokinety')
+    h5.leg  Interactive Fetch Toy | Orange
+    p.desc
+      | Made with rubber and foam and durable canvas fabric
+      br
+      | $ 45.15
+    button.btn.btn-info.buttonP Add to Cart
+
 // ABOUT US
+#contact-b
 #aboutDiv
-  #contact-b
   h1 ABOUT US
   p
-    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas, odio ac sollicitudin efficitur, eros mauris malesuada ante, sit amet aliquet turpis ligula eu dui. Duis finibus leo quis lobortis cursus. Quisque fermentum urna at lacus pharetra convallis. Praesent erat ipsum, facilisis eget finibus nec, placerat in felis. Suspendisse tellus diam, congue et elementum ut, posuere congue augue. Maecenas ultrices eleifend commodo. Quisque quis turpis a dui suscipit viverra sed in velit. Vestibulum diam purus, pretium ut dui ultrices, gravida imperdiet tortor. Cras vel lorem lectus. In purus ipsum, viverra at convallis sit amet, pharetra at leo.
+    | Pets are more than roommates. They’re family. We know the indelible, unconditional love we feel when we see our favorite wagging tail. And we also know the paralyzing fear when they don’t come home.
+
+    | We exist to keep our families together. Sure, technology today may promise to help that cause. But the truth is, a simple tag remains the simplest and most effective way to reunite us with our best friend.
+    br
+    | With 25 years ModernPet is the best solution to provide the peace of mind that comes with keeping your family together.
 // FOOTER
-footer
-  .logoFooter
+footer.footer
+  .logoFooter.col.col-12.col-md-3
     img(src='images/logo-small-2.png' alt='Modern Pet')
   .footerR
     .row
-      .col
+      .col.col-12.col-md-3
         h5 MAIN MENU
         ul.list-unstyled.f_list
           li
-            a(href='#') Home
+            a(href='/') Home
           li
             a(href='#aboutDiv') About
           li
             a(href='/contact') Contact Us
-      .col
+      .col.col-12.col-md-3
         h5 LOCATION
         ul.list-unstyled.f_list
           li
@@ -112,7 +132,7 @@ footer
             a(href='https://goo.gl/maps/18rCxBk2LYeWNrL49' target='_blank') Alafaya
           li
             a(href='https://goo.gl/maps/vjVeq4CyDi4SPZEs9' target='_blank') Downtown
-      .col
+      .col.col-12.col-md-3
         h5 FOLLOW US!
         .row.text-center.socialbottom
           .col-12.col-md-3
@@ -127,14 +147,15 @@ footer
             a.fa.fa-facebook(href='https://m.facebook.com/search/videos/?q=%23puppies&source=filter&isTrending=0' target='_blank')
           br
           br
-  #copy.copy.col-sm-4
-    // <div id="copy" class="col-12 col-sm-2 mt-4 justify-content-end text-sm-right mr-4">
-    div &copy; Copyright 2020 : modernpet.com
-    div
-      p
-        | Website developed and designed by 
-        a(href='http://rebecatino.co' target='_blank') Rebeca Tinoco
+    .copy.col-sm-4
+      .copy &copy; Copyright 2020 : modernpet.com
+        p
+          | Website developed and designed by 
+          a(href='http://rebecatino.co' target='_blank') Rebeca Tinoco
+
+div 
 // External Files/Links
+script(src='/main.js')
 // Font Awesome
 link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
 // Bootstrap CSS
@@ -144,3 +165,7 @@ script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
 // Popper
 script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
 // End of External Files/Links
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')

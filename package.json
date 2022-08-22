@@ -8,7 +8,7 @@
     "scss": "node-sass -o css/ css/",
     "start": "npm run watch:all",
     "watch": "nodemon ./start.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "watch:scss": "onchange 'css/*.scss' -- npm run scss",
     "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite' "
   },
@@ -29,7 +29,9 @@
     "pug": "^3.0.2"
   },
   "devDependencies": {
+    "jest": "^28.1.3",
     "node-sass": "^7.0.1",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "supertest": "^6.2.4"
   }
 }

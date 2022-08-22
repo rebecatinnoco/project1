@@ -7,81 +7,87 @@ head
   link(rel='icon' href='images/icon.png' type='image/icon type')
   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.11/vue.js')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+  link(rel='stylesheet' href='style.css')
+
   // Project Local CSS
   link(rel='stylesheet' href='css/style.css')
 #container
   header
-    // <nav class="main-menu navbar navbar-expand-sm navbar-dark">
     .main-header
       .logo
         img(src='images/logo-small-2.png' alt='Modern Pet')
-      nav.main-menu.navbar.navbar-expand-sm.navbar-dark
-        #navbarContent
-          ul.navbar-nav
-            li.nav-item
-              a.nav-link(href='/') Home
-            li.nav-item
-              a.nav-link(href='#aboutDiv') About
-            li.nav-item
-              a.nav-link(href='contact') Contact Us
-            a.nav-item.btn.btn-info.buttonR(href='logout') Log Out
+      nav.main-menu.navbar.navbar-expand-lg.navbar-light
+        .container-fluid.navbarContent
+          button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+          #navbarNav.collapse.navbar-collapse
+            ul.navbar-nav
+              li.nav-item
+                a.nav-link(href='/') Home
+              li.nav-item
+                a.nav-link(href='/') About
+              li.nav-item
+                a.nav-link(href='contact') Contact Us
+              a.nav-item.btn.btn-info.buttonR(href='logout') Log Out
 #bottomHeader
   a(href='#')
     p CLICK HERE FOR 25% off!
 // REGISTER
-.message-box
-  h1#welcome-message
-.welcome
-  h3 Welcome
+.contact
+  .contactinfo
+    .welcome
+      h3 Welcome
+      a.nav-link(href='/') Proceed to Home Page
 // FOOTER
-footer
-  .logoFooter
+footer.footer
+  .logoFooter.col.col-12.col-md-3
     img(src='images/logo-small-2.png' alt='Modern Pet')
   .footerR
     .row
-      .col
+      .col.col-12.col-md-3
         h5 MAIN MENU
         ul.list-unstyled.f_list
           li
-            a(href='#') Home
+            a(href='/') Home
           li
-            a(href='#') About
+            a(href='/') About
           li
-            a(href='#') Contact Us
-      .col
+            a(href='/contact') Contact Us
+      .col.col-12.col-md-3
         h5 LOCATION
         ul.list-unstyled.f_list
           li
-            a(href='#') South Orlando
+            a(href='https://goo.gl/maps/hqacjYqXwNDhgL8E7' target='_blank') South Orlando
           li
-            a(href='#') Alafaya
+            a(href='https://goo.gl/maps/18rCxBk2LYeWNrL49' target='_blank') Alafaya
           li
-            a(href='#') Downtown
-      .col
+            a(href='https://goo.gl/maps/vjVeq4CyDi4SPZEs9' target='_blank') Downtown
+      .col.col-12.col-md-3
         h5 FOLLOW US!
         .row.text-center.socialbottom
           .col-12.col-md-3
-            a.fa.fa-instagram(href='#')
+            a.fa.fa-instagram(href='https://www.instagram.com/explore/tags/puppies/?hl=en' target='_blank')
           br
           br
           .col-12.col-md-3
-            a.fa.fa-twitter(href='#')
+            a.fa.fa-twitter(href='https://twitter.com/search?q=puppies&src=typed_query' target='_blank')
           br
           br
           .col-12.col-md-3
-            a.fa.fa-facebook(href='#')
+            a.fa.fa-facebook(href='https://m.facebook.com/search/videos/?q=%23puppies&source=filter&isTrending=0' target='_blank')
           br
           br
-  #copy.copy.col-sm-4
-    // <div id="copy" class="col-12 col-sm-2 mt-4 justify-content-end text-sm-right mr-4">
-    div &copy; Copyright 2020 : modernpet.com
-    div
-      p
-        | Website developed and designed by 
-        a(href='http://rebecatino.co') Rebeca Tinoco
+    .copy.col-sm-4
+      .copy &copy; Copyright 2020 : modernpet.com
+        p
+          | Website developed and designed by 
+          a(href='http://rebecatino.co' target='_blank') Rebeca Tinoco
+
+div 
 // External Files/Links
-
-
 // Font Awesome
 link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
 // Bootstrap CSS
@@ -91,4 +97,7 @@ script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
 // Popper
 script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
 // End of External Files/Links
-
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')

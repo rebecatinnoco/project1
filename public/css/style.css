@@ -1,3 +1,64 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 576px) {
+  .main-wrapper {
+      grid-template-columns: repeat(1, 1fr);
+  }
+
+  .images{
+      grid-template-columns: repeat(1, 1fr);
+      justify-content: center !important;
+  }
+
+  .social,
+  .ft1 {
+      justify-content: center;
+  }
+
+  .social {
+      margin-top: 10px;
+  }
+
+}
+
+/* Medium devices (portrait tablets and large phones, 577px to 1199px) */
+@media only screen and (min-width: 577px) {
+  .main-wrapper {
+      grid-template-columns: repeat(3, 1fr);
+  }
+
+  .images {
+      grid-template-columns: repeat(1, 1fr);
+      justify-content: center !important;
+  }
+
+  .social,
+  .ft1 {
+      justify-content: center;
+  }
+}
+
+/* larger devices (landscape tablets, laptops/desktops 1200 and up) */
+@media only screen and (min-width: 1200px) {
+  #main-wrapper {
+      grid-template-columns: repeat(3, 1fr);
+  }
+
+  #contact-n {
+      grid-template-columns: repeat(6, 1fr);
+      padding-left: 10em;
+  }
+
+}
+
+@font-face {
+  font-family: 'Bodoni Moda 72pt ExtraBold';
+  src: url('fonts/BodoniModa72pt-ExtraBold.eot');
+  src: url('fonts/BodoniModa72pt-ExtraBold.eot?#iefix') format('embedded-opentype'),
+      url('fonts/BodoniModa72pt-ExtraBold.woff2') format('woff2'),
+      url('fonts/BodoniModa72pt-ExtraBold.woff') format('woff'),
+      url('fonts/BodoniModa72pt-ExtraBold.ttf') format('truetype'),
+      url('fonts/BodoniModa72pt-ExtraBold.svg#Bodoni Moda 72pt ExtraBold') format('svg');
+}
 header {
   background-size: 1500px;
   height: 150px;
@@ -49,39 +110,42 @@ nav {
   text-decoration: none;
 }
 
-.main-wrapper h1 {
+.top {
   text-align: center;
-  padding: 1em;
-}
-#vue {
-  margin: auto;
-  display: grid;
-  column-gap: 50px;
-  grid-template-columns: auto auto auto;
   padding: 2em;
-
 }
-#images {
+
+.main-wrapper {
+  display: grid;
+  text-align: center;
+  gap: 20px;
+  padding-bottom: 2em;
+  justify-content: center;
+}
+
+.images {
   background-color: rgba(255, 255, 255, 0.8);
   /* border: 1px solid rgba(0, 0, 0, 0.8); */
   padding: 20px;
+  margin: 40px;
   font-size: 30px;
-  text-align: center;
 }
-#images img {
+.images img {
   height: 100px;
 }
 
-#images .desc {
+.images .desc {
   font-size: small;
 }
 
-#images .leg {
+.images .leg {
   font-size: medium;
 }
 
 #aboutDiv {
   text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: larger;
 }
 #aboutDiv p {
   text-align: center;
@@ -92,7 +156,7 @@ nav {
 
 .thankyou {
   text-align: center;
-  margin: 200px;
+  margin: 100px;
 }
 .welcome {
   text-align: center;
@@ -100,11 +164,11 @@ nav {
 }
 .logout {
   text-align: center;
-  margin: 200px;
+  margin: 100px;
 }
 .login {
   text-align: center;
-  margin: 100px;
+  margin: 50px;
 }
 .listing-reg h1 {
   text-align: center;
@@ -112,13 +176,16 @@ nav {
 }
 .title h3 {
   text-align: center;
-  margin: 20px;
+  padding: 20px;
 }
 /* css for registration form and errors*/
 .form-registration {
   max-width: 330px;
   padding: 15px;
-  margin: 0 auto;
+  margin: auto;
+}
+.commentbox textarea {
+  width: 100%;
 }
 .form-registration {
   display: flex;
@@ -201,7 +268,10 @@ nav {
   margin-top: 2rem;
   margin-bottom: 50px;
   padding: 1rem;
-  padding-left: 4rem;
+  /* padding-left: 4rem; */
+}
+.contactinfo h3 {
+  text-align: center;
 }
 .contactinfo legend {
   text-align: center;
@@ -219,78 +289,37 @@ footer {
   background: rgb(148,90,42);
   background: linear-gradient(90deg, rgba(148,90,42,1) 18%, rgba(99,78,151,1) 63%, rgba(122,177,94,1) 100%);
   width: 100%;
-  height: auto;
-  display: inline-block;
+  height: 800px;
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; 
   margin-top: 50px;
 }
 footer .logoFooter img {
   width: 180px;
   margin: 0.5em 2em;
   float: left;
+  display: grid;
+  text-align: center;
+  height: auto;
 }
-
 .footerR {
   float: right;
   padding-top: 1em;
-
+  display: grid;
+  text-align: center;
+  height: auto;
 }
-
+.footerR .col {
+  margin: 22px;
+}
 .footer_link {
   display: inline-block;
-}
-
-
-#contact-b {
-  border-top: 1px rgb(199, 197, 197) solid;
-  border-bottom: 1px rgb(199, 197, 197) solid;
-  text-align: center;
-  margin: auto;
-  width: 80%;
-  margin-bottom: 2em;
-
-}
-
-#contact-n {
-  text-align: center;
-  display: grid;
-  margin-top: 1em;
-  float: right;
-  display: inline;
-}
-
-#contact-n ul {
-  list-style-type: none;
-  padding: 1em;
-  display: inline-block;
-}
-
-#contact-n ul li {
-  font-weight: bold;
-  color: rgb(88, 83, 83);
-}
-
-#contact-n ul a {
-  color: rgb(103, 103, 103);
-  text-decoration: underline;
-  font-weight: lighter;
-}
-
-.ft {
-  padding-left: 20px;
-  text-decoration: underline;
-  color: dimgray;
-  font-weight: bold;
-  font-size: small;
 }
 
 footer .social .fa {
   padding: 15px;
   font-size: 15px;
   width: 15px;
-  text-decoration: none;
   margin: 0 4px;
   border-radius: 50%;
   padding-right: 28px;
@@ -337,16 +366,19 @@ footer .social {
   padding-bottom: 30px;
 
 }
-
-footer .ft1 {
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 70px;
-  padding-bottom: 50px;
-  color: rgb(74, 71, 71) !important;
-}
-
-footer .copy {
+.copy {
   text-align: center;
-  padding-top: 300px;
+  width: 300px;  
 }
+
+.navbar-nav li:hover>a {
+  background: #ffff;
+  color: #444444 !important;
+  transition: background-color 0.3s ease-in;
+}
+
+.navbar-toggler[aria-expanded="true"] {
+  justify-content: right;
+}
+
+

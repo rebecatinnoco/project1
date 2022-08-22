@@ -13,86 +13,51 @@ const basic = auth.basic({
   file: path.join(__dirname, '../users.htpasswd'),
 });
 
+app.use(express.static(path.join(__dirname, 'public')))
 
 const connectEnsureLogin = require('connect-ensure-login');
 
-
 router.get('/', (req, res) => {
-  //res.send('It works!');
   res.render('index', { title: 'Home' });
 });
 router.get('/contact', (req, res) => {
-  //res.send('It works!');
   res.render('contact', { title: 'Contact' });
 });
 router.get('/login', (req, res) => {
-  //res.send('It works!');
   res.render('login', { title: 'login' });
 });
 router.get('/register', (req, res) => {
-  //res.send('It works!');
   res.render('register', { title: 'Registration form' });
 });
 router.get('/logged', (req, res) => {
-  //res.send('It works!');
   res.render('logged', { title: 'Welcome' });
 });
 router.get('/logout', (req, res) => {
-  //res.send('It works!');
   res.render('logout', { title: 'Welcome' });
 });
 
 router.get('/registrations', basic.check((req, res) => {
-  UserDetails.find()
+  Registration.find()
     .then((registrations) => {
       res.render('registrations', { title: 'Listing registrations', registrations });
     })
     .catch(() => { 
       res.send('Sorry! Something went wrong.'); 
     });
-// router.get('/login', 
-//         (req, res) => res.sendFile('login',
-//         { root: __dirname })
-//     );
-// router.get('/logged',
-//         connectEnsureLogin.ensureLoggedIn(),
-//         (req, res) => res.sendFile('logged', { root: __dirname})
-//     );
-router.get('/user',
-        connectEnsureLogin.ensureLoggedIn(),
-        (req, res) => res.render({user: req.user})
+router.get('/login', 
+        (req, res) => res.sendFile('login',
+        { root: __dirname })
     );
-// router.get('/logout',
-//         (req, res) => {
-//             // req.logout(),
-//             // res.sendFile('logout',{ root: __dirname })
-//             res.render('logout', { title: 'Logout' , root: __dirname });
-//     });
+router.get('/logged',
+        connectEnsureLogin.ensureLoggedIn(),
+        (req, res) => res.sendFile('logged', { root: __dirname})
+    );
+router.get('/logout',
+        (req, res) => {
+            res.render('logout', { title: 'Logout' , root: __dirname });
+    });
 
 }));
-
-router.post('/login', (req,res,next) => {
-  passport.authenticate('local',
-  (err,user,info) => {
-      if (err) {
-        console.log("1"); 
-        return next(err);
-      }
-      if (!user) {
-        console.log("2");
-        return res.redirect('/login?info=' + info);
-      }
-
-      req.logIn(user, function(err) {
-          if (err) {
-            console.log("3");
-            return next(err);
-          }
-          console.log("4");
-          return res.redirect('/logged');
-      });
-  }) (req, res, next);
-});
 
 router.post('/', 
     [
@@ -131,26 +96,48 @@ router.post('/',
                 data: req.body,
              });
           }
-    });
+          
+    }),
 
-      // login route
-      router.post("/login", async (req, res) => {
-        const body = req.body;
-        const registration = await Registration.findOne({ username: body.username });
-        if (registration) {
-          // check user password with hashed password stored in the database
-          const validPassword = await bcrypt.compare(body.password, registration.password);
-          if (validPassword) {
-            res.status(200).json({ message: "Valid password" });
-          } else {
-            res.status(400).json({ error: "Invalid Password" });
+router.post('/login', (req,res,next) => {
+      passport.authenticate('local',
+      (err,user,info) => {
+          if (err) {
+            console.log("1"); 
+            return next(err);
           }
+          if (!user) {
+            console.log("2");
+            return res.redirect('/login?info=' + info);
+          }
+    
+          req.logIn(user, function(err) {
+              if (err) {
+                console.log("3");
+                return next(err);
+              }
+              console.log("4");
+              return res.redirect('/logged');
+          });
+
+      }) (req, res, next);
+
+    },
+    async (req, res) => {
+      const body = req.body;
+      const registration = await Registration.findOne({ username: body.username });
+      if (registration) {
+        // check user password with hashed password stored in the database
+        const validPassword = await bcrypt.compare(body.password, registration.password);
+        if (validPassword) {
+          res.status(200).json({ message: "Valid password" });
         } else {
-          res.status(401).json({ error: "User does not exist" });
+          res.status(400).json({ error: "Invalid Password" });
         }
-      });
+      } else {
+        res.status(401).json({ error: "User does not exist" });
+      }
+    });
 
       
 module.exports = router;
-// Registration.register({username:'tin', active: false}, 'tin');
-// UserDetails.register({emai: 'jra@sss.com', username:'klk'}, {password});

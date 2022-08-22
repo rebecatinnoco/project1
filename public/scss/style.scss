@@ -1,3 +1,68 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 576px) {
+	.main-wrapper {
+		grid-template-columns: repeat(1, 1fr);
+	}
+  
+	.images{
+		grid-template-columns: repeat(1, 1fr);
+		justify-content: center !important;
+	}
+  
+	.social,
+	.ft1 {
+		justify-content: center;
+	}
+  
+	.social {
+		margin-top: 10px;
+	}
+  
+  }
+  
+  /* Medium devices (portrait tablets and large phones, 577px to 1199px) */
+  @media only screen and (min-width: 577px) {
+	.main-wrapper {
+		grid-template-columns: repeat(3, 1fr);
+	}
+  
+	.images {
+		grid-template-columns: repeat(1, 1fr);
+		justify-content: center !important;
+	}
+  
+	.social,
+	.ft1 {
+		justify-content: center;
+	}
+  }
+  
+  /* larger devices (landscape tablets, laptops/desktops 1200 and up) */
+  @media only screen and (min-width: 1200px) {
+	#main-wrapper {
+		grid-template-columns: repeat(3, 1fr);
+	}
+  
+	#contact-n {
+		grid-template-columns: repeat(6, 1fr);
+		padding-left: 10em;
+	}
+  
+  }
+  
+  @font-face {
+	font-family: 'Bodoni Moda 72pt ExtraBold';
+	src: url('fonts/BodoniModa72pt-ExtraBold.eot');
+	src: url('fonts/BodoniModa72pt-ExtraBold.eot?#iefix') format('embedded-opentype'),
+		url('fonts/BodoniModa72pt-ExtraBold.woff2') format('woff2'),
+		url('fonts/BodoniModa72pt-ExtraBold.woff') format('woff'),
+		url('fonts/BodoniModa72pt-ExtraBold.ttf') format('truetype'),
+		url('fonts/BodoniModa72pt-ExtraBold.svg#Bodoni Moda 72pt ExtraBold') format('svg');
+  }
+#contact-n {
+	grid-template-columns: repeat(6, 1fr);
+	padding-left: 10em;
+}
 header {
 	background-size: 1500px;
 	height: 150px;
@@ -12,12 +77,10 @@ header {
 	width: 100%;
 	min-height: 100px;
 	height: 180px;
-	.logo {
-		img {
-			width: 220px;
-			margin: 0.5em 2em;
-			float: left;
-		}
+	img {
+		width: 220px;
+		margin: 0.5em 2em;
+		float: left;
 	}
 }
 .buttonR {
@@ -27,101 +90,177 @@ header {
 .buttonP {
 	border-radius: 20%;
 }
-#home {
-	nav {
-		float: right;
-		margin: 3em 3em 0 0;
-	}
-	.nav-item {
-		font-weight: bolder;
-	}
-	#bottomHeader {
-		margin-top: 30px;
-		text-align: center;
-		height: 30px;
-		background-color: rgba(199,199,199,60%);
-		font-size: medium;
-		font-weight: 500;
-		border-top-style: dashed;
-		border-top-color: #b6b6b6;
-		text-decoration: none;
-	}
-	#aboutDiv {
-		text-align: center;
-		p {
-			text-align: center;
-			padding-left: 60px;
-			padding-right: 60px;
-			padding-top: 20px;
-		}
-	}
+nav {
+	float: right;
+	margin: 3em 3em 0 0;
 }
-#home #bottomHeader a:link, a:visited,  a:hover, a:active {
+.nav-item {
+	font-weight: bolder;
+}
+#bottomHeader {
+	margin-top: 30px;
+	text-align: center;
+	height: 30px;
+	background-color: rgba(199,199,199,60%);
+	font-size: medium;
+	font-weight: 500;
+	border-top-style: dashed;
+	border-top-color: #b6b6b6;
+	text-decoration: none;
+}
+#bottomHeader a:link, a:visited,  a:hover, a:active {
 	color: midnightblue;
 	text-decoration: none;
 }
-span {
-	color: white;
+.top {
 	text-align: center;
-	margin: auto;
-	width: 50%;
-	padding: 10px;
-}
-.main-wrapper {
-	h1 {
-		text-align: center;
-		padding: 1em;
-	}
-}
-#vue {
-	margin: auto;
-	display: grid;
-	column-gap: 50px;
-	grid-template-columns: auto auto auto;
 	padding: 2em;
 }
-#images {
-	background-color: rgba(255, 255, 255, 0.8);
-	padding: 20px;
-	font-size: 30px;
+.main-wrapper {
+	display: grid;
 	text-align: center;
-	img {
-		height: 100px;
-	}
-	.desc {
-		font-size: small;
-	}
-	.leg {
-		font-size: medium;
-	}
+	gap: 20px;
+	padding-bottom: 2em;
+	justify-content: center;
 }
-#ab1, #ab2 {
+#aboutDiv {
 	text-align: center;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: larger;
+	p {
+		text-align: center;
+		padding-left: 60px;
+		padding-right: 60px;
+		padding-top: 20px;
+	}
 }
-#ab1 {
-	background: url(images/about-our-philosophy-bg.jpeg);
-	background-size: 1500px;
-	height: 100%;
-	padding: 80px;
-	display: block;
-	background-position: center;
+.thankyou {
+	text-align: center;
+	margin: 100px;
 }
-#ab2 {
-	background: url(images/about-we-do-a-pretty-good-job-bg.jpeg);
-	background-size: 1500px;
+.welcome {
+	text-align: center;
+	margin: 200px;
+}
+.logout {
+	text-align: center;
+	margin: 100px;
+}
+.login {
+	text-align: center;
+	margin: 50px;
+}
+.listing-reg {
+	h1 {
+		text-align: center;
+		margin: 0 0 2rem;
+	}
+}
+.title {
+	h3 {
+		text-align: center;
+		padding: 20px;
+	}
+}
+.form-registration {
+	max-width: 330px;
+	padding: 15px;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	input {
+		width: 100%;
+		margin: 0px 0 10px;
+	}
+	.btn {
+		flex: 1 0 100%;
+	}
+}
+.commentbox {
+	textarea {
+		width: 100%;
+	}
+}
+.my-errors {
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
+	color: #333;
+	font-size: 1.2rem;
+	display: table;
+	li {
+		margin: 0 0 1rem;
+		&:before {
+			content: "! Error : ";
+			color: #f00;
+			font-weight: bold;
+		}
+	}
+}
+.listing-table {
+	width: 100%;
+	th {
+		background: #000;
+		color: #fff;
+	}
+}
+.listing-table th,
+.listing-table td {
+	padding: 10px;
+	border-bottom: 1px solid #666;
+}
+.listing-table td:first-child,
+.listing-table th:first-child {
+	border-right: 1px solid #666;
+}
+.thank {
+	margin: auto;
+	width: 10%;
+	padding-top: 300px;
+	font-weight: bolder;
+	text-align: center;
+	position: fixed;
+	width: 100%;
 	height: 100%;
-	padding: 80px;
-	display: block;
-	background-position: center;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(215,215,215,0.9);
+	z-index: 2;
+}
+.contact {
+	width: 50%;
+	text-align: left;
+	margin: auto;
+	margin-top: 2em;
+	background: linear-gradient(90deg, rgba(148,90,42,1) 18%, rgba(99,78,151,1) 63%, rgba(122,177,94,1) 100%);
+}
+.contactinfo {
+	margin: 0.2rem;
+	margin-top: 20px;
+	background: #fff;
+	margin-top: 2rem;
+	margin-bottom: 50px;
+	padding: 1rem;
+	h3 {
+		text-align: center;
+	}
+	legend {
+		text-align: center;
+		padding-bottom: 1em;
+		font-weight: bold;
+	}
+}
+#butt {
+	padding-top: 1em;
 }
 footer {
 	background: rgb(148,90,42);
 	background: linear-gradient(90deg, rgba(148,90,42,1) 18%, rgba(99,78,151,1) 63%, rgba(122,177,94,1) 100%);
 	width: 100%;
-	height: auto;
-	display: inline-block;
+	height: 800px;
 	background-position: center;
-	background-repeat: no-repeat;
 	background-size: cover;
 	margin-top: 50px;
 	.logoFooter {
@@ -129,6 +268,9 @@ footer {
 			width: 180px;
 			margin: 0.5em 2em;
 			float: left;
+			display: grid;
+			text-align: center;
+			height: auto;
 		}
 	}
 	.social {
@@ -140,7 +282,6 @@ footer {
 			padding: 15px;
 			font-size: 15px;
 			width: 15px;
-			text-decoration: none;
 			margin: 0 4px;
 			border-radius: 50%;
 			padding-right: 28px;
@@ -165,60 +306,19 @@ footer {
 			color: white;
 		}
 	}
-	.ft1 {
-		display: flex;
-		justify-content: flex-start;
-		padding-left: 70px;
-		padding-bottom: 50px;
-		color: rgb(74, 71, 71) !important;
-	}
-	.copy {
-		text-align: center;
-		padding-top: 300px;
-	}
 }
 .footerR {
 	float: right;
 	padding-top: 1em;
+	display: grid;
+	text-align: center;
+	height: auto;
+	.col {
+		margin: 22px;
+	}
 }
 .footer_link {
 	display: inline-block;
-}
-#contact-b {
-	border-top: 1px rgb(199, 197, 197) solid;
-	border-bottom: 1px rgb(199, 197, 197) solid;
-	text-align: center;
-	margin: auto;
-	width: 80%;
-	margin-bottom: 2em;
-}
-#contact-n {
-	text-align: center;
-	display: grid;
-	margin-top: 1em;
-	float: right;
-	display: inline;
-	ul {
-		list-style-type: none;
-		padding: 1em;
-		display: inline-block;
-		li {
-			font-weight: bold;
-			color: rgb(88, 83, 83);
-		}
-		a {
-			color: rgb(103, 103, 103);
-			text-decoration: underline;
-			font-weight: lighter;
-		}
-	}
-}
-.ft {
-	padding-left: 20px;
-	text-decoration: underline;
-	color: dimgray;
-	font-weight: bold;
-	font-size: small;
 }
 .fa-yelp {
 	background: #cb2027;
@@ -227,4 +327,22 @@ footer {
 .fa-youtube {
 	background: #bb0000;
 	color: white;
+}
+.copy {
+	text-align: center;
+	width: 300px;
+}
+.navbar-nav {
+	li {
+		&:hover {
+			& > a {
+				background: #ffff;
+				color: #444444 !important;
+				transition: background-color 0.3s ease-in;
+			}
+		}
+	}
+}
+.navbar-toggler[aria-expanded="true"] {
+	justify-content: right;
 }
